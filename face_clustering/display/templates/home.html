@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>人脸聚类系统</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="table-responsive">
+	<table class="table">
+		<h2 style="width:100%;text-align:center">人脸聚类系统</h2>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>图片显示</th>
+				<th>出现次数</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for ids,numberOccurrences,route in d1 %}
+					<tr>
+						<td>
+							{{ids}}
+						</td>
+						<td>
+							<!--<img src="/static/images/3/1502243564.png" width="40" height="40">-->
+							<input type="image" src="/static/images/{{ids}}/{{route}}" width="40" height="40" onclick="window.open('second.html')">
+						</td>
+						<td> 
+							{{numberOccurrences}}
+						</td>
+					</tr>
+			{% endfor %}	
+		</tbody>
+	</table>
+</div>  	
+
+</body>
+</html>
